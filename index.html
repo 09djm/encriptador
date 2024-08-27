@@ -1,36 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador De Texto</title>
+    <title>Encriptador</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
-    <header class="header">
-        <img src="assets/Logo.png" alt="Logo de Alura" class="logo">
-    </header>
-    <main class="main">
-        <section>
-            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
-            <div class="requisitos">
-                <img class="exclamacion" src="assets/Vector.png" alt="Signo de alerta">
-                 <h6>Solo letras minuscúlas y sin acentos</h6>
+    <div class="contenedor-principal">
+        <div class="ingreso-texto">
+            <h1><img src="./assets/Logo.png" alt="logo-alura"></h1>
+            <div class="contenedor-texto-botones">
+                <form>
+                    <label for="mensaje"></label>
+                    <textarea placeholder="Ingrese aquí el texto"  cols="70" rows="10" id="mensaje" class="input-padron" maxlength="400"></textarea>
+                </form>
+                <div class="contenedor-botones">
+                    <div class="mensaje-descritivo">
+                        <img src="./assets/Vector.png" alt="icono-importancia-alta">
+                        <p>Solo letras minúsculas y sin acentos (Máximo 400 carácteres)</p>
+                    </div>
+                    <div class="botones">
+                        <button id="boton-uno" onclick="encriptarTexto();">Encriptar</button>
+                        <button id="boton-dos"onclick="desencriptarTexto()">Desencriptar</button>
+                    </div>
+                </div>
             </div>
-            <div class="botones">
-                <button class="btn-encriptar">Encriptar</button>
-                <button class="btn-desencriptar">Desencriptar</button>
+        </div>
+        <div class="salida-texto" >
+            <div><img id="imagen-de-busqueda" src="./assets/homero.png" alt="homero-buscando"></div>
+            <div id="textoAcopiar" class="contenedor-parrafos-busqueda">
+                <p>Ningún mensaje fue encontrado</p>
+                <p>Ingresa el texto que deseas encriptar o desencriptar.</p>
             </div>
-        </section>
-        <section>
-                <textarea class="mensaje" cols="20" rows="10"></textarea>
-            <div>
-                <button class="copiar">Copiar</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <h6>Desarrollado por Luis Daniel Jimenez Morales</h6>
+            <button id="boton-tres" onclick="copiarTexto();" hidden>Copiar</button>
+        </div>
+    </div>
+    <footer class="footer">
+        Desarrollado por Luis Daniel Jimenez Morales para Alura Latam
     </footer>
+    <script src="app.js" defer></script>
 </body>
 </html>
